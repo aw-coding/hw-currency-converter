@@ -1,0 +1,20 @@
+{
+  "name": "hw_currency_converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.12",
+    "vue-cli": "^2.9.6",
+    "webpack": "^5.13.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.3.1"
+  }
+}
