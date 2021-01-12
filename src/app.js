@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
         el:"#app",
         data: {
             allCurrencies: [],
-            currencyFrom: '',
-            currencyTo: '',
+            amountToConvert: '',
+            currencyFrom: {
+                name: '',
+                value: ''
+            },
+            currencyTo: {
+                name: '',
+                value: ''
+            },
         },
         mounted(){
             this.getCurrencies()

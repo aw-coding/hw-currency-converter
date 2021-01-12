@@ -10,6 +10,18 @@
 <body>
     <div id="app">
         <h1> Currency Convertor</h1>
+        <h2> Enter the number of euros to be converted, and to which currency.</h2>
+        <input placeholder="Amount" type="text" v-model="amountToConvert" />
+        <input type="submit"/>
+
+        <select v-model="currencyTo">
+            <option v-for="(value, name) in allCurrencies.rates" >
+                {{name}}
+
+            </option>
+
+        </select>
+
 
 
     </div>
