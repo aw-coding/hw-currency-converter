@@ -14,11 +14,11 @@
         <input placeholder="Amount" type="text" v-model="amountToConvert" />
         <input type="submit"/>
 
-        <select v-model="currencyTo">
-            <option v-for="(value, name) in allCurrencies.rates" >
-                {{name}}
-
+        <select v-model="key">
+            <option v-for="(rate, key) in allCurrencies.rates":value="{'key':key, 'rate':rate}" >
+                {{key}}
             </option>
+            <!-- <button v-on:click="getCurrencyToValue">fef</button> -->
 
         </select>
 
