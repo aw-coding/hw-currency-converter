@@ -11,8 +11,18 @@
     <div id="app">
         <h1> Currency Convertor</h1>
         <h2> Enter the number of euros to be converted, and to which currency.</h2>
-        <input placeholder="Amount" type="text" v-model="amountToConvert" />
+        <input placeholder="Amount" type="text" v-model.number="amountToConvert" />
         <input type="submit"/>
+
+        <p>Are you converting another currency to or from Euros?</p>
+
+        <div>
+        <select v-model="toOrFromEuros">
+            <option>Convert to Euros</option>
+            <option>Convert from Euros</option>
+
+        </select>
+        </div>
 
         <select v-model.number="currencyTo">
             <option v-for="(rate, key) in allCurrencies.rates":value="{'key':key, 'rate':rate}" >
@@ -21,7 +31,12 @@
             <!-- <button v-on:click="getCurrencyToValue">fef</button> -->
 
         </select>
-        <h3> {{amountToConvert}} Euro(s) is worth {{(amountToConvert * currencyTo.rate).toFixed(2)}} {{currencyTo.key}}(s)</h3>
+
+        <h2 v-if= "toOrFromEuros === 'Convert to Euros'">
+            {{amountToConvert}} {{currencyTo.key}}(s) is worth {{(amountToConvert * (1/currencyTo.rate)).toFixed(2)}} Euro(s)
+        </h2>
+
+        <h3 v-if= "toOrFromEuros === 'Convert from Euros'"> {{amountToConvert}} Euro(s) is worth {{(amountToConvert * currencyTo.rate).toFixed(2)}} {{currencyTo.key}}(s)</h3>
 
 
     </div>

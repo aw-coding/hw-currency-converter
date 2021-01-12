@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data: {
             key: '',
             currencyTo: '',
+            toOrFromEuros: '',
             allCurrencies: [],
             allRates: [],
             amountToConvert: '',
