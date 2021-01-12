@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el:"#app",
         data: {
             key: '',
+            currencyTo: '',
             allCurrencies: [],
             allRates: [],
             amountToConvert: '',
@@ -15,10 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 value: ''
             },
             currencyToArrayIndex: '',
-            currencyTo: {
-                name: '',
-                value: ''
-            },
+
+
         },
         mounted(){
             this.getCurrencies(),

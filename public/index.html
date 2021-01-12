@@ -14,14 +14,14 @@
         <input placeholder="Amount" type="text" v-model="amountToConvert" />
         <input type="submit"/>
 
-        <select v-model="key">
+        <select v-model.number="currencyTo">
             <option v-for="(rate, key) in allCurrencies.rates":value="{'key':key, 'rate':rate}" >
                 {{key}}
             </option>
             <!-- <button v-on:click="getCurrencyToValue">fef</button> -->
 
         </select>
-
+        <h3> {{amountToConvert}} Euro(s) is worth {{(amountToConvert * currencyTo.rate).toFixed(2)}} {{currencyTo.key}}(s)</h3>
 
 
     </div>
